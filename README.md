@@ -1,70 +1,56 @@
-# HI RevealJS Slides Template
+# quarto-hi
 
-Reusable Quarto + Reveal.js presentation template using the HI color palette in `styles.css`.
+A [Quarto](https://quarto.org/) RevealJS presentation template following the [Háskóli Íslands (University of Iceland)](https://honnun.hi.is) visual identity guidelines.
 
-## Template Configuration
-
-Edit the Quarto YAML header in `index.qmd` for the talk metadata. The presenter details live in a nested `presenter:` block in the YAML frontmatter of `index.qmd`. The title slide reads the following values:
-
-- From `index.qmd` frontmatter: `title`, `subtitle`, `author`, `institute`, `date`
-- From the `index.qmd` frontmatter: the nested `presenter` fields for name, position, department, office, username, GitHub, and ORCID ID
-
-The raw slide content lives in `slides.qmd`, while `index.qmd` is the wrapper that defines the metadata and includes the slides.
-
-The email, GitHub URL, and ORCID URL are derived in `slides.qmd`, and the GitHub and ORCID links use Font Awesome brand icons.
-
-Font Awesome is loaded from the web via CDN in `_quarto.yml`. If you want a local copy instead, download it from https://fontawesome.com/download and replace the CDN `<link>` with a local CSS file.
-
-## Quick Start
-
-Install Quarto ([get-started](https://quarto.org/docs/get-started/])), then render or 
-preview:
+## Use this template
 
 ```bash
-quarto render index.qmd
-quarto preview index.qmd
+quarto use template tungufoss/quarto-hi
 ```
 
-The rendered site is written to `_site/` for deployment by GitHub Actions.
+Or clone manually:
 
-## Main Files
+```bash
+git clone git@github.com:tungufoss/quarto-hi.git
+```
 
-- `index.qmd`: Quarto wrapper entrypoint
-- `slides.qmd`: raw slide body included by `index.qmd`
-- `styles.css`: reusable HI theme styles
-- `_quarto.yml`: project-level Quarto settings
-- `img/`: place reusable background images and figures here
+## What's included
 
-## GitHub Pages
+| Path | Purpose |
+|---|---|
+| `styles/colors.css` | HI colour palette and CSS variables |
+| `styles/hi26-reveal.css` | Core layout, typography, card components |
+| `styles/cdio2026.css` | Presentation-specific overrides (fa-cards, h2 accent) |
+| `_extensions/hi-title/` | Custom title slide Lua filter |
+| `_extensions/card-enum/` | `{.fa-card}` card grid shortcode |
+| `_extensions/pause/` | Pause shortcode for speaker pacing |
+| `partials/` | HTML includes (fonts, Font Awesome, favicon, countdown) |
+| `scripts/countdown.js` | Countdown timer for in-slide clocks |
+| `img/hi/` | HI logos and favicon (SVG) |
+| `template.qmd` | Starter slide deck |
 
-This project is set up to publish from the repository root rather than `docs/`. That means GitHub Pages should be configured to deploy from the root of your main branch, and the rendered site can reference `img/` directly.
+## Card syntax
 
-## Included Patterns
+```markdown
+::: {.fa-card cols=2}
+- lightbulb | **Key idea** | supporting text
+- chart-line | **Another** | more detail
+:::
+```
 
-- Title and section divider slides
-- Bullets, incremental bullets, columns, callouts, quotes, and tables
-- Base R plots and optional `ggplot2` examples
-- LaTeX notation with inline and display math
-- Background color and background-image examples
-- Speaker notes
+Icons are [Font Awesome 6](https://fontawesome.com/icons) names (without the `fa-` prefix).
 
+## Colour palette
 
-## HI Colors
+Defined as CSS variables in `styles/colors.css`, matching [honnun.hi.is](https://honnun.hi.is):
 
-Primary:
+- `--primary` / `--blue`: `#10099F`
+- `--teal`: `#2DD2C0`
+- `--secondary`: `#D61F69`
+- `--yellow`: `#FAC55B`
+- `--orange`: `#FFA05F`
+- `--red`: `#FC8484`
 
-- `#10099F`
+## Font
 
-Support:
-
-- `#2DD2C0`
-- `#00FFBA`
-- `#FAC55B`
-- `#FC8484`
-- `#FFA05F`
-- `#F5F5F5`
-- `#262626`
-
-Engineering:
-
-- `#EB7125`
+[Jost](https://fonts.google.com/specimen/Jost) loaded from Google Fonts via `partials/header-includes.inc`.

@@ -1,0 +1,94 @@
+---
+pagetitle: "Presentation Title"
+output-file: index.html
+lang: en
+title-theme: "Department / Course"
+subtitle-highlight: "Your Presentation Title"
+presenters:
+  - name: "Your Name"
+    hi-username: "username"
+    orcid: ""
+subtitle-position: below
+event-meta: "Event Name"
+event-date: "Date"
+format:
+  revealjs:
+    theme: white
+    css:
+      - styles/colors.css
+      - styles/hi26-reveal.css
+      - styles/cdio2026.css
+    filters:
+      - _extensions/hi-title/hi-title.lua
+      - _extensions/card-enum/card-enum.lua
+    logo: img/hi/hi_named_logo-en.svg
+    footer: "Event Name · Your Name · username@hi.is"
+    include-in-header: partials/header-includes.inc
+    include-after-body: partials/body-after.inc
+    slide-number: true
+    show-slide-number: speaker
+    controls: true
+    transition: none
+    background-transition: none
+    width: 1280
+    height: 720
+---
+
+{{< hi-title >}}
+
+::: {.notes}
+- Introduce yourself
+- Overview of the talk
+:::
+
+## Slide with cards
+
+::: {.fa-card cols=1}
+- lightbulb | **Key point** | supporting detail
+- chart-line | **Another point** | more detail
+- users | **Third point** | and so on
+:::
+
+::: {.notes}
+- Notes go here as bullet cues
+:::
+
+---
+
+## Slide with two-column cards
+
+::: {.fa-card cols=2}
+- circle-check | **First** | left card content
+- circle-xmark | **Second** | right card content
+:::
+
+::: {.notes}
+- Talking cue one
+- Talking cue two
+:::
+
+---
+
+## Slide with image
+
+![](img/hi/hi_named_logo-en.svg){width=60% style="display:block;margin:auto"}
+
+::: {.notes}
+- Notes here
+:::
+
+---
+
+## Questions?
+
+::: {.two-col}
+::: {.col}
+![](img/hi/hi_named_logo-en.svg){.contact-photo}
+:::
+
+::: {.col}
+```{=html}
+{{< include partials/contact-card.html >}}
+```
+:::
+:::
