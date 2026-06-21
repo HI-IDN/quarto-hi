@@ -1,6 +1,6 @@
 ---
 pagetitle: "quarto-hi template showcase"
-output-file: index.html
+output-file: example-en.html
 lang: en
 title-theme: "QUARTO-HI"
 subtitle-highlight: "Template Showcase"
@@ -380,7 +380,7 @@ The next two slides show a live login slide and a question slide — with placeh
 
 ::: {.two-col}
 ::: {}
-![](img/presenter-example.jpg){.contact-photo}
+![](img/hi-vr-ii.jpg){.contact-photo}
 :::
 
 ::: {}
@@ -389,7 +389,7 @@ The next two slides show a live login slide and a question slide — with placeh
 ```
 
 ::: {.lean-in}
-Replace `presenter-example.jpg` with your own photo. Edit `partials/contact-card.html` with your details.
+Replace `hi-vr-ii.jpg` with your own photo. Edit `partials/contact-card.html` with your details.
 :::
 :::
 :::

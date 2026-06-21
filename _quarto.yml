@@ -1,3 +1,7 @@
 project:
   type: website
-  output-dir: .
+  output-dir: _site
+  render:
+    - index.qmd
+    - example-en.qmd
+    - example-is.qmd

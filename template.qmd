@@ -81,7 +81,7 @@ format:
 
 ::: {.two-col}
 ::: {.col}
-![](img/hi/hi_named_logo-en.svg){.contact-photo}
+![](img/hi-vr-ii.jpg){.contact-photo}
 :::
 
 ::: {.col}

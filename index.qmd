@@ -1,0 +1,24 @@
+---
+pagetitle: "quarto-hi"
+title: "quarto-hi"
+format:
+  html:
+    toc: false
+    page-layout: full
+    css: styles/demo-index.css
+    include-in-header: partials/header-includes.inc
+---
+
+```{=html}
+<main class="demo-index">
+  <section class="demo-index__hero">
+    <img src="img/hi/hi_logo.svg" alt="" class="demo-index__mark">
+    <h1>quarto-hi</h1>
+    <p>Choose a Háskóli Íslands RevealJS showcase deck.</p>
+    <nav class="demo-index__links" aria-label="Choose language">
+      <a href="example-en.html">English deck</a>
+      <a href="example-is.html" lang="is">Íslenskt sýnishorn</a>
+    </nav>
+  </section>
+</main>
+```

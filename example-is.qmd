@@ -51,7 +51,7 @@ format:
 ## Hvað er í þessum sniðmát
 
 ::: {.fa-card cols=3}
-- palette | **HI sjónarmiðastefna** | Jost leturgerð, litapaletta HÍ frá honnun.hi.is, vatnsmerki í bakgrunni
+- palette | **HÍ hönnunarstaðall** | Jost leturgerð, litapaletta HÍ frá honnun.hi.is, vatnsmerki í bakgrunni
 - layer-group | **Íhlutasafn** | kort, tilvitnun, skref, útlit, ábendingar, niðurteljari og fleira
 - puzzle-piece | **Lua-viðbætur** | hi-title · card-enum · pause · menti
 :::
@@ -378,7 +378,7 @@ Næstu tvær glærur sýna lifandi innskráningarglæru og spurningaglæru — m
 
 ::: {.two-col}
 ::: {}
-![](img/presenter-example.jpg){.contact-photo}
+![](img/hi-vr-ii.jpg){.contact-photo}
 :::
 
 ::: {}
@@ -387,7 +387,7 @@ Næstu tvær glærur sýna lifandi innskráningarglæru og spurningaglæru — m
 ```
 
 ::: {.lean-in}
-Skiptu út `presenter-example.jpg` fyrir eigin mynd. Breyttu `partials/contact-card.html` með þínar upplýsingar.
+Skiptu út `hi-vr-ii.jpg` fyrir eigin mynd. Breyttu `partials/contact-card.html` með þínar upplýsingar.
 :::
 :::
 :::

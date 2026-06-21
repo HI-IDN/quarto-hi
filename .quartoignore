@@ -1,0 +1,12 @@
+.github/
+_quarto.yml
+_site/
+index.qmd
+example-en.qmd
+example-is.qmd
+README.md
+LICENSE
+search.json
+styles/demo-index.css
+img/menti-qr.png
+img/pop-pallas.jpg

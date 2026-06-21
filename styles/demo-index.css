@@ -1,0 +1,134 @@
+:root {
+  --hi-blue: #10099f;
+  --hi-teal: #2dd2c0;
+  --hi-green: #00ffba;
+  --hi-yellow: #fac55b;
+  --hi-paper: #f5f5f5;
+  --hi-panel: #eeeeee;
+  --hi-ink: #262626;
+  --hi-white: #ffffff;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+  background: var(--hi-paper);
+  color: var(--hi-ink);
+  font-family: Jost, system-ui, sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.demo-index {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 56px 72px;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.demo-index::after {
+  content: "";
+  position: absolute;
+  right: -230px;
+  top: 96px;
+  width: 820px;
+  height: 820px;
+  background: var(--hi-panel);
+  mask-image: url("../img/hi/hi_logo.svg");
+  -webkit-mask-image: url("../img/hi/hi_logo.svg");
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-position: center;
+  mask-size: contain;
+  -webkit-mask-size: contain;
+  pointer-events: none;
+}
+
+.demo-index__hero {
+  width: min(820px, 100%);
+  position: relative;
+  z-index: 1;
+}
+
+.demo-index__mark {
+  width: 132px;
+  height: 132px;
+  object-fit: contain;
+  margin-bottom: 28px;
+}
+
+.demo-index h1 {
+  margin: 0 0 14px;
+  color: var(--hi-blue);
+  font-size: 76px;
+  line-height: 0.95;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.demo-index p {
+  max-width: 620px;
+  margin: 0 0 34px;
+  color: var(--hi-ink);
+  font-size: 24px;
+  line-height: 1.35;
+  font-weight: 600;
+}
+
+.demo-index__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.demo-index__links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 54px;
+  padding: 0 24px;
+  background: var(--hi-blue);
+  color: var(--hi-white);
+  font-size: 18px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.demo-index__links a:hover,
+.demo-index__links a:focus {
+  outline: 3px solid var(--hi-yellow);
+  outline-offset: 3px;
+}
+
+.demo-index__links a:nth-child(2) {
+  background: var(--hi-teal);
+  color: var(--hi-blue);
+}
+
+@media (max-width: 760px) {
+  .demo-index {
+    padding: 40px 28px;
+    place-items: start;
+  }
+
+  .demo-index::after {
+    width: 520px;
+    height: 520px;
+    right: -250px;
+    top: 180px;
+  }
+
+  .demo-index h1 {
+    font-size: 54px;
+  }
+
+  .demo-index p {
+    font-size: 20px;
+  }
+}
