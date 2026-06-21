@@ -1,0 +1,400 @@
+---
+pagetitle: "quarto-hi template showcase"
+output-file: index.html
+lang: en
+title-theme: "QUARTO-HI"
+subtitle-highlight: "Template Showcase"
+presenters:
+  - name: "Your Name"
+    hi-username: "username"
+    orcid: "0000-0000-0000-0000"
+subtitle-position: below
+event-meta: "Your Event"
+event-date: today
+menti_url: "https://www.menti.com/example"
+menti_display_url: "www.menti.com"
+menti_code: "1234 5678"
+menti_qr: "img/menti-qr.png"
+format:
+  revealjs:
+    theme: styles/hi.scss
+    css:
+      - styles/watermark.css
+    filters:
+      - _extensions/hi-title/hi-title.lua
+      - _extensions/card-enum/card-enum.lua
+      - _extensions/pause/pause.lua
+      - _extensions/menti/menti.lua
+    logo: img/hi/hi_named_logo-en.svg
+    footer: "quarto-hi · University of Iceland"
+    include-in-header: partials/header-includes.inc
+    include-after-body: partials/body-after.inc
+    slide-number: false
+    controls: true
+    transition: none
+    background-transition: none
+    width: 1280
+    height: 720
+---
+
+{{< hi-title >}}
+
+::: {.notes}
+- Title slide is generated from YAML front matter by the `hi-title` filter
+- Fields: `title-theme`, `subtitle-highlight`, `presenters`, `event-meta`, `event-date`
+- `subtitle-position: below` swaps title and subtitle order
+- `event-date: today` → resolves at render time in English or Icelandic
+:::
+
+---
+
+## What's in this template
+
+::: {.fa-card cols=3}
+- palette | **HI Visual Identity** | Jost font, HI colour palette from honnun.hi.is, watermark background
+- layer-group | **Component Library** | cards, quotes, steps, layouts, callouts, countdowns and more
+- puzzle-piece | **Lua Extensions** | hi-title · card-enum · pause · menti
+:::
+
+::: {.notes}
+- Everything needed for a polished HI-branded RevealJS deck
+- Extensions are bundled — no separate install
+- Works with `quarto use template tungufoss/quarto-hi`
+:::
+
+---
+
+## fa-card — syntax
+
+<span class="slide-subtitle">`::: {.fa-card cols=N}` · one list item per card: `- icon | **Title** | body`</span>
+
+::: {.two-col}
+::: {}
+```markdown
+::: {.fa-card cols=2}
+- lightbulb | **Insight** | supporting detail
+- users | **Audience** | who this affects
+:::
+```
+
+- Icon: any [Font Awesome](https://fontawesome.com/icons) solid name
+- `[brands] github` prefix for brand icons
+- `**bold**`, `_italic_`, `` `code` `` work anywhere
+- `cols=` sets cards per row — excess wraps to next row
+- Add `/subtitle text` as 3rd segment for a small label above the body
+:::
+
+::: {}
+::: {.fa-card cols=2}
+- lightbulb | **Insight** | /Step 1 | supporting detail
+- users | **Audience** | who this affects
+:::
+:::
+:::
+
+::: {.notes}
+- card-enum.lua processes the fenced div into HTML grid
+- Three widths available: cols=1, cols=2, cols=3 (more is possible but gets cramped)
+:::
+
+---
+
+## fa-card — colours
+
+**Default** — all blue
+
+::: {.fa-card cols=3}
+- star | **One** | body text
+- heart | **Two** | body text
+- bolt | **Three** | body text
+:::
+
+**Per-item override** — prefix icon with `[hi-red]`, `[hi-teal]`, `[hi-pink]` etc.
+
+::: {.fa-card cols=3}
+- star | **One** | body text
+- [hi-red] heart | **Two** | stands out in red
+- bolt | **Three** | body text
+:::
+
+::: {.notes}
+- Default: all cards are blue — consistent and clean
+- Prefix any icon with [hi-red] / [hi-teal] / [hi-pink] / [hi-yellow] / [hi-orange] / [hi-green] to override that card's colour
+- Useful for highlighting a key card or warning
+:::
+
+---
+
+## fa-card — extended syntax
+
+<span class="slide-subtitle">Sub-bullets `* item`, formula `~ text`, inline icons `[icon-name]`</span>
+
+::: {.fa-card cols=2}
+- chart-bar | **With sub-bullets** | supporting description | * First bullet point | * Second bullet point | * Third bullet point
+- function | **With formula** | two inputs combine | ~ [arrow-up] Input [plus] Context [arrow-right] Output
+:::
+
+::: {.lean-in}
+`- icon | title | body | * bullet | * bullet` · `- icon | title | body | ~ [icon] text`
+:::
+
+::: {.notes}
+- Pipe-separated: icon | title | body | extras
+- * prefix → bullet list inside the card body
+- ~ prefix → formula line; [icon-name] renders FA icons inline
+:::
+
+---
+
+## Steps
+
+<span class="slide-subtitle">`::: {.steps}` · one list item per step: `- Label | description`</span>
+
+::: {.steps}
+- Define | the problem scope
+- Design | the intervention
+- Implement | and observe
+- Evaluate | outcomes
+:::
+
+::: {.lean-in}
+Colours cycle automatically through the HI palette.
+:::
+
+::: {.notes}
+- .steps generates chevron-shaped step chips
+- Up to 6 steps — colour cycling: blue → teal → yellow → orange → red → green
+- Use | to split label from sub-label (both optional)
+:::
+
+---
+
+## Quote, callout & statement
+
+> The quality of feedback matters more than its frequency.
+
+::: {.callout}
+Designing assessment **for** professional competence, not just testing it.
+:::
+
+::: {.statement}
+Industry doesn't grade on a curve — neither should we.
+:::
+
+::: {.notes}
+- blockquote → blue left border, large text
+- .callout → yellow background, bold emphasis
+- .statement → clean left-rule for thesis statements
+:::
+
+---
+
+## Layouts & blocks
+
+<span class="slide-subtitle">`.two-col` · `.three-col` · `.img-split` · `.block` variants</span>
+
+::: {.two-col}
+::: {}
+**Left column** — text, lists, or any content.
+
+- Point one with some detail
+- Point two with more detail
+
+::: {.block}
+**Definition** — neutral, blue border.
+:::
+
+::: {.example-block}
+**Example** — teal tint, positive framing.
+:::
+:::
+
+::: {}
+**Right column** — same flexibility.
+
+::: {.block .alert}
+**Alert** — yellow tint, caution or caveat.
+:::
+
+::: {.block .danger}
+**Danger** — red tint, error or critical warning.
+:::
+
+::: {.lean-in}
+Stack blocks with `.block-grid` for consistent spacing.
+:::
+:::
+:::
+
+::: {.notes}
+- .two-col: equal 1fr 1fr grid
+- .three-col: three equal columns
+- .img-split on the slide header: text left, full-height image right
+:::
+
+---
+
+## Image split layout {.img-split}
+
+::: {.slide-content}
+<span class="kicker">Layout</span>
+<h2 class="r-fit-text">img-split</h2>
+
+Add `.img-split` to the slide heading to get a full-height image panel on the right.
+
+::: {.block}
+Text and components go in `.slide-content`. The image fills the right panel edge-to-edge.
+:::
+:::
+
+<figure>
+<img class="slide-img" src="img/pop-pallas.jpg" alt="">
+</figure>
+
+::: {.notes}
+- .img-split slides have no padding — image bleeds to edges
+- Control ratio with CSS vars --img-split-text-width / --img-split-image-width
+:::
+
+---
+
+## AI-generated image {.img-split}
+
+::: {.slide-content}
+<span class="kicker">Prompt engineering</span>
+<h2>AI-generated image</h2>
+
+Use `.img-split` with a `<figure>` and `<figcaption class="caption-prompt">` to show an AI-generated image with the prompt visible. Add `data-ai="Gemini"` (or Midjourney, DALL·E…) to name the tool.
+
+::: {.block}
+`<figcaption class="caption-prompt" data-ai="Gemini">` → **GEMINI PROMPT ·**
+Omit `data-ai` → **PROMPT ·**
+:::
+:::
+
+<figure>
+<img class="slide-img" src="img/pop-pallas.jpg" alt="Pop Art Pallas Athena">
+<figcaption class="caption-prompt" data-ai="Gemini">Pop Art (Warhol): A bold Warhol-style for University of Iceland Pallas Athena logo — each panel a vivid screenprint colour. Palette: #10099F #2DD2C0 #FAC55B #FC8484 #FFA05F on white. Thick outlines, flat halftone dots, no text, portrait mode.</figcaption>
+</figure>
+
+::: {.notes}
+- data-ai="Gemini" → "GEMINI PROMPT · " via CSS attr()
+- data-ai="Midjourney" → "MIDJOURNEY PROMPT · " — any string works
+- Omit data-ai → plain "PROMPT · "
+:::
+
+---
+
+## Pause — in-class countdown
+
+<span class="slide-subtitle">Shortcode: `pause` followed by duration in seconds</span>
+
+::: {.two-col}
+::: {}
+Insert a timed break with a live countdown clock.
+
+Syntax: two braces, `< pause 300 >`, two closing braces — where `300` is the number of seconds.
+
+- Always in seconds (`300` = 5 min, `600` = 10 min)
+- Clock ticks live in the browser
+- Slide background turns yellow when time is up
+- Language-aware: **Break** (EN) / **Pása** (IS)
+:::
+
+::: {}
+::: {.block}
+The `pause` extension lives in `_extensions/pause/`. Add `pause.lua` to your filters list.
+:::
+::: {.lean-in}
+The next slide is a live 30-second pause example — click the arrow to see it.
+:::
+:::
+:::
+
+::: {.notes}
+- Great for workshops, lectures, and in-class exercises
+- The countdown runs client-side via body-after.inc JavaScript
+:::
+
+---
+
+{{< pause 30 >}}
+
+---
+
+## Menti — audience response
+
+<span class="slide-subtitle">Set credentials in YAML · use `.menti-login` for the entry slide · `data-menti="true"` for question slides</span>
+
+::: {.two-col}
+::: {}
+**YAML front matter:**
+
+```yaml
+menti_url: "https://www.menti.com/..."
+menti_display_url: "www.menti.com"
+menti_code: "1234 5678"
+menti_qr: "img/menti-qr.png"
+```
+
+**Login slide:**
+```markdown
+## {.focus-slide .menti-login intro="Scan the QR code"}
+```
+
+**Question slide** (embeds live Menti):
+```markdown
+## {data-menti="true"}
+```
+:::
+
+::: {}
+::: {.block}
+The `menti` extension reads credentials once from YAML and injects them into every login and question slide automatically.
+:::
+::: {.example-block}
+The next two slides show a live login slide and a question slide — with placeholder credentials.
+:::
+:::
+:::
+
+::: {.notes}
+- menti.lua is in _extensions/menti/
+- Add _extensions/menti/menti.lua to filters
+- QR code image must be provided separately — export from Menti
+:::
+
+---
+
+## {.focus-slide .menti-login intro="Scan the QR code to join"}
+
+---
+
+## {data-menti="true"}
+
+<aside class="notes">Menti question slide — the live Menti iframe loads here during the real presentation.</aside>
+
+---
+
+## Questions? {.focus-slide}
+
+::: {.two-col}
+::: {}
+![](img/presenter-example.jpg){.contact-photo}
+:::
+
+::: {}
+```{=html}
+{{< include partials/contact-card.html >}}
+```
+
+::: {.lean-in}
+Replace `presenter-example.jpg` with your own photo. Edit `partials/contact-card.html` with your details.
+:::
+:::
+:::
+
+::: {.notes}
+- Contact slide: photo left, contact card right
+- .contact-photo crops to fit the column
+:::

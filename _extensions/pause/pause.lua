@@ -12,9 +12,10 @@ local function format_time(seconds)
 end
 
 local pause_count = 0
+local pause_label = { is = "Pása", en = "Break" }
 
 return {
-  ["pause"] = function(args)
+  ["pause"] = function(args, kwargs, meta)
     local raw_seconds = stringify(args[1])
     local seconds = tonumber(raw_seconds)
 
@@ -24,6 +25,13 @@ return {
         "Expected a positive integer number of seconds, e.g. {{< pause 300 >}}"
       )
     end
+
+    local lang = "en"
+    if meta and meta["lang"] then
+      local l = stringify(meta["lang"]):lower():sub(1, 2)
+      if l == "is" then lang = "is" end
+    end
+    local label = pause_label[lang] or "Break"
 
     pause_count = pause_count + 1
 
@@ -42,7 +50,7 @@ return {
       ),
       pandoc.RawBlock(
         "html",
-        '<h1>Pása</h1>\n' ..
+        '<h1>' .. label .. '</h1>\n' ..
         '<div class="countdown-clock" data-countdown-display>' .. format_time(seconds) .. '</div>'
       )
     }

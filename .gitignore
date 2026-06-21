@@ -28,3 +28,7 @@ __pycache__/
 # Local reference material
 tmp/
 
+
+# build output
+*.html
+!template.qmd

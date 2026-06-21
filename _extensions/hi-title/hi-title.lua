@@ -109,31 +109,35 @@ local function presenters_html(meta)
   return table.concat(parts, "<br>\n")
 end
 
-local function icelandic_today()
-  local months = {
-    "janúar",
-    "febrúar",
-    "mars",
-    "apríl",
-    "maí",
-    "júní",
-    "júlí",
-    "ágúst",
-    "september",
-    "október",
-    "nóvember",
-    "desember"
-  }
+local function today_formatted(lang)
   local now = os.date("*t")
-  return string.format("%d. %s %d", now.day, months[now.month], now.year)
+  if lang:sub(1, 2) == "is" then
+    local months_is = {
+      "janúar","febrúar","mars","apríl","maí","júní",
+      "júlí","ágúst","september","október","nóvember","desember"
+    }
+    return string.format("%d. %s %d", now.day, months_is[now.month], now.year)
+  else
+    local months_en = {
+      "January","February","March","April","May","June",
+      "July","August","September","October","November","December"
+    }
+    local day = now.day
+    local suffix = "th"
+    if day == 1 or day == 21 or day == 31 then suffix = "st"
+    elseif day == 2 or day == 22 then suffix = "nd"
+    elseif day == 3 or day == 23 then suffix = "rd" end
+    return string.format("%d%s %s %d", day, suffix, months_en[now.month], now.year)
+  end
 end
 
 return {
   ["hi-title"] = function(args, kwargs, meta)
+    local lang = document_lang(meta)
     local event_meta = meta_to_html(metadata_value(meta, "event-meta"))
     local date = meta_to_html(metadata_value(meta, "event-date"))
-    if date == "" then
-      date = icelandic_today()
+    if date == "" or date == "today" then
+      date = today_formatted(lang)
     end
     local event_line = event_meta
 
@@ -148,6 +152,10 @@ return {
     if subtitle_pos == "below" then
       extra_class = " subtitle-below"
     end
+
+    local presenters = presenters_html(meta)
+    local presenter_block = presenters ~= "" and
+      '<div class="title-meta">\n' .. presenters .. "\n</div>\n" or ""
 
     return {
       pandoc.Header(
@@ -168,7 +176,7 @@ return {
         '<div class="title-theme">' .. html_escape(metadata_value(meta, "title-theme")) .. "</div>\n" ..
         '<h1 class="subtitle-highlight">' .. html_escape(metadata_value(meta, "subtitle-highlight")) .. "</h1>\n" ..
         '</div>\n' ..
-        '<div class="title-meta">\n' .. presenters_html(meta) .. "\n</div>\n" ..
+        presenter_block ..
         '<div class="event-meta">' .. event_line .. "</div>"
       )
     }

@@ -10,14 +10,12 @@ presenters:
     orcid: ""
 subtitle-position: below
 event-meta: "Event Name"
-event-date: "Date"
+event-date: today
 format:
   revealjs:
-    theme: white
+    theme: styles/hi.scss
     css:
-      - styles/colors.css
-      - styles/hi26-reveal.css
-      - styles/cdio2026.css
+      - styles/watermark.css
     filters:
       - _extensions/hi-title/hi-title.lua
       - _extensions/card-enum/card-enum.lua
