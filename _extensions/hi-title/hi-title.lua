@@ -109,6 +109,82 @@ local function presenters_html(meta)
   return table.concat(parts, "<br>\n")
 end
 
+local function first_presenter(meta)
+  local presenters = metadata_value(meta, "presenters")
+  if type(presenters) ~= "table" then
+    return nil
+  end
+  return presenters[1]
+end
+
+local function presenter_field(presenter, key)
+  if presenter == nil then
+    return ""
+  end
+  return stringify(presenter[key])
+end
+
+local function contact_row(icon_class, html)
+  if html == "" then
+    return ""
+  end
+  return '  <div class="contact-card-row">\n' ..
+    '    <i class="' .. icon_class .. ' fa-fw"></i>\n' ..
+    "    " .. html .. "\n" ..
+    "  </div>\n"
+end
+
+local function contact_card_html(meta)
+  local presenter = first_presenter(meta)
+  if presenter == nil then
+    return ""
+  end
+
+  local name = html_escape(presenter.name)
+  local username = presenter_field(presenter, "hi-username")
+  local email = presenter_field(presenter, "email")
+  local office = presenter_field(presenter, "office")
+  local affiliation = presenter_field(presenter, "affiliation")
+  local orcid = presenter_field(presenter, "orcid")
+  local github = presenter_field(presenter, "github"):gsub("^@", "")
+
+  if email == "" and username ~= "" then
+    email = username .. "@hi.is"
+  end
+
+  if office == "" then
+    office = affiliation
+  elseif affiliation ~= "" then
+    office = office .. " · " .. affiliation
+  end
+
+  if office == "" then
+    if document_lang(meta):sub(1, 2) == "is" then
+      office = "Háskóli Íslands"
+    else
+      office = "University of Iceland"
+    end
+  end
+
+  local rows = ""
+  rows = rows .. contact_row("fa-solid fa-user", name ~= "" and "<span>" .. name .. "</span>" or "")
+  rows = rows .. contact_row(
+    "fa-solid fa-envelope",
+    email ~= "" and '<a href="mailto:' .. html_escape(email) .. '">' .. html_escape(email) .. "</a>" or ""
+  )
+  rows = rows .. contact_row("fa-solid fa-building-columns", "<span>" .. html_escape(office) .. "</span>")
+  rows = rows .. contact_row(
+    "fa-brands fa-orcid",
+    orcid ~= "" and '<a href="https://orcid.org/' .. html_escape(orcid) .. '" target="_blank" rel="noopener noreferrer">' .. html_escape(orcid) .. "</a>" or ""
+  )
+  rows = rows .. contact_row(
+    "fa-brands fa-github",
+    github ~= "" and '<a href="https://github.com/' .. html_escape(github) .. '" target="_blank" rel="noopener noreferrer">@' .. html_escape(github) .. "</a>" or ""
+  )
+
+  return '<div class="contact-card">\n' .. rows .. "</div>"
+end
+
 local function today_formatted(lang)
   local now = os.date("*t")
   if lang:sub(1, 2) == "is" then
@@ -180,5 +256,8 @@ return {
         '<div class="event-meta">' .. event_line .. "</div>"
       )
     }
+  end,
+  ["contact-card"] = function(args, kwargs, meta)
+    return pandoc.RawBlock("html", contact_card_html(meta))
   end
 }

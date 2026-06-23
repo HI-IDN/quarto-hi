@@ -8,6 +8,7 @@ presenters:
   - name: "Your Name"
     hi-username: "username"
     orcid: ""
+    github: "yourusername"
 subtitle-position: below
 event-meta: "Event Name"
 event-date: today
@@ -85,8 +86,6 @@ format:
 :::
 
 ::: {.col}
-```{=html}
-{{< include partials/contact-card.html >}}
-```
+{{< contact-card >}}
 :::
 :::

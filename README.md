@@ -63,6 +63,29 @@ Do not duplicate the SVG for colour variants; change `--watermark-color` instead
 
 Icons are [Font Awesome 6](https://fontawesome.com/icons) names (without the `fa-` prefix).
 
+## Contact card
+
+Use the metadata-driven contact card shortcode on a slide:
+
+```markdown
+{{< contact-card >}}
+```
+
+It uses the first entry in `presenters`:
+
+```yaml
+presenters:
+  - name: "Your Name"
+    hi-username: "username"
+    email: "optional.override@hi.is"
+    office: "Optional office"
+    affiliation: "University of Iceland"
+    orcid: "0000-0000-0000-0000"
+    github: "yourusername"
+```
+
+If `email` is omitted, the card derives `username@hi.is` from `hi-username`.
+
 ## Colour palette
 
 Defined as CSS variables in `styles/hi.scss`, matching [honnun.hi.is](https://honnun.hi.is):

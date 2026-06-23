@@ -8,6 +8,7 @@ presenters:
   - name: "Nafnið þitt"
     hi-username: "notandanafn"
     orcid: "0000-0000-0000-0000"
+    github: "notandanafn"
 subtitle-position: below
 event-meta: "Nafn viðburðar"
 event-date: today
@@ -382,12 +383,10 @@ Næstu tvær glærur sýna lifandi innskráningarglæru og spurningaglæru — m
 :::
 
 ::: {}
-```{=html}
-{{< include partials/contact-card.html >}}
-```
+{{< contact-card >}}
 
 ::: {.lean-in}
-Skiptu út `hi-vr-ii.jpg` fyrir eigin mynd. Breyttu `partials/contact-card.html` með þínar upplýsingar.
+Skiptu út `hi-vr-ii.jpg` fyrir eigin mynd. Tengiliðaspjaldið er búið til úr `presenters` í YAML.
 :::
 :::
 :::

@@ -8,6 +8,7 @@ presenters:
   - name: "Your Name"
     hi-username: "username"
     orcid: "0000-0000-0000-0000"
+    github: "yourusername"
 subtitle-position: below
 event-meta: "Your Event"
 event-date: today
@@ -384,12 +385,10 @@ The next two slides show a live login slide and a question slide — with placeh
 :::
 
 ::: {}
-```{=html}
-{{< include partials/contact-card.html >}}
-```
+{{< contact-card >}}
 
 ::: {.lean-in}
-Replace `hi-vr-ii.jpg` with your own photo. Edit `partials/contact-card.html` with your details.
+Replace `hi-vr-ii.jpg` with your own photo. The contact card is generated from `presenters` in YAML.
 :::
 :::
 :::
