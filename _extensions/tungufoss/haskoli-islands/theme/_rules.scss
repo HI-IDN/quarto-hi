@@ -1,0 +1,84 @@
+:root {
+  --hi-blue: #{$hi-blue};
+  --hi-dark-blue: #{$hi-dark-blue};
+  --hi-accent: #{$hi-accent};
+  --hi-yellow: #{$hi-yellow};
+  --hi-green: #{$hi-green};
+  --hi-turquoise: #{$hi-turquoise};
+  --hi-ink: #{$hi-ink};
+  --hi-muted: #{$hi-muted};
+  --hi-border: #{$hi-border};
+  --hi-surface: #{$hi-surface};
+}
+
+body {
+  color: $hi-ink;
+}
+
+a {
+  color: $hi-blue;
+}
+
+a:hover,
+a:focus {
+  color: $hi-dark-blue;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $hi-ink;
+  font-family: $hi-heading-family;
+  font-weight: 800;
+}
+
+h1,
+.title {
+  border-bottom: 4px solid $hi-accent;
+  padding-bottom: 0.35rem;
+}
+
+.navbar,
+.quarto-title-banner {
+  border-bottom: 4px solid $hi-accent;
+}
+
+.navbar-title {
+  font-weight: 700;
+}
+
+.callout {
+  border-radius: 0.25rem;
+}
+
+.callout.callout-style-default {
+  border-left-color: $hi-blue;
+}
+
+.hi-lead {
+  color: $hi-muted;
+  font-size: 1.15rem;
+  line-height: 1.65;
+}
+
+.hi-highlight {
+  border-left: 0.35rem solid $hi-accent;
+  background: $hi-surface;
+  padding: 1rem 1.25rem;
+}
+
+.hi-kpi {
+  border-top: 0.3rem solid $hi-blue;
+  background: $hi-white;
+  box-shadow: 0 0.15rem 0.75rem rgba(21, 25, 29, 0.08);
+  padding: 1rem;
+}
+
+.hi-kpi strong {
+  color: $hi-dark-blue;
+  display: block;
+  font-size: 1.75rem;
+}
