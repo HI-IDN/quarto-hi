@@ -2,16 +2,18 @@
 
 A [Quarto](https://quarto.org/) RevealJS presentation template following the [Háskóli Íslands (University of Iceland)](https://honnun.hi.is) visual identity guidelines.
 
+The HI-IDN starter template: `template.qmd` is a ready deck with HÍ logos, watermark and a VR-II contact slide; fill in your details in the YAML. For a personal version, fork this repo and put your details in the fork. The look comes from the shared [HÍ Quarto theme](https://github.com/tungufoss/quarto-haskoli-islands-theme/releases/tag/v0.2.0) v0.2.0.
+
 ## Use this template
 
 ```bash
-quarto use template tungufoss/quarto-hi
+quarto use template HI-IDN/quarto-hi
 ```
 
 Or clone manually:
 
 ```bash
-git clone git@github.com:tungufoss/quarto-hi.git
+git clone git@github.com:HI-IDN/quarto-hi.git
 ```
 
 ## Demo pages
@@ -27,14 +29,8 @@ The starter template copy excludes these showcase files and starts from `templat
 
 | Path | Purpose |
 |---|---|
-| `styles/hi.scss` | HI palette, RevealJS theme variables, typography, layouts, and components |
-| `styles/watermark.css` | Reusable watermark/background mark using one external SVG mask |
-| `_extensions/hi-title/` | Custom title slide Lua filter |
-| `_extensions/card-enum/` | `{.fa-card}` card grid shortcode |
-| `_extensions/pause/` | Pause shortcode for speaker pacing |
-| `_extensions/menti/` | Menti login and embedded question slide helpers |
-| `partials/` | HTML includes (fonts, Font Awesome, favicon, countdown) |
-| `scripts/countdown.js` | Countdown timer for in-slide clocks |
+| `_extensions/tungufoss/haskoli-islands/` | The [HÍ Quarto theme](https://github.com/tungufoss/quarto-haskoli-islands-theme/releases/tag/v0.2.0) v0.2.0: styles, title slide, contact card, cards, pause and Menti. Update with `quarto update extension tungufoss/quarto-haskoli-islands-theme` |
+| `img/` | HÍ logos, watermark, favicon and the VR-II photo used by this template |
 | `img/hi/` | HI logos and favicon (SVG) |
 | `template.qmd` | Starter slide deck |
 | `example-en.qmd` | English showcase rendered for the GitHub Pages demo |
@@ -88,7 +84,7 @@ If `email` is omitted, the card derives `username@hi.is` from `hi-username`.
 
 ## Colour palette
 
-Defined as CSS variables in `styles/hi.scss`, matching [honnun.hi.is](https://honnun.hi.is):
+Defined as CSS variables in the theme extension, matching [honnun.hi.is](https://honnun.hi.is):
 
 - `--primary` / `--blue`: `#10099F`
 - `--teal`: `#2DD2C0`
@@ -99,4 +95,4 @@ Defined as CSS variables in `styles/hi.scss`, matching [honnun.hi.is](https://ho
 
 ## Font
 
-[Jost](https://fonts.google.com/specimen/Jost) loaded from Google Fonts via `partials/header-includes.inc`.
+[Jost](https://fonts.google.com/specimen/Jost) loaded from Google Fonts by the theme extension.

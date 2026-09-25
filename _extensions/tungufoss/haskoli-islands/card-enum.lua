@@ -211,6 +211,8 @@ end
 local function render_card_rows(div, item_renderer, wrapper_class, row_class)
   -- Allow per-block column override via  ::: {.card-enum cols=4}
   local cols = tonumber(div.attributes and div.attributes["cols"]) or 3
+  -- A zero, negative or fractional count would never advance the loop below
+  cols = math.max(1, math.floor(cols))
 
   -- Pass through any extra classes on the div (e.g. .colorful)
   local extra = {}
