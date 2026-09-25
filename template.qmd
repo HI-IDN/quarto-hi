@@ -6,10 +6,10 @@ title-theme: "Department / Course"
 subtitle-highlight: "Your Presentation Title"
 subtitle-position: below
 presenters:
-  - name: "Dr. Helga Ingimundardóttir"
-    hi-username: "helgaingim"
-    orcid: "0000-0002-2780-3546"
-    github: "tungufoss"
+  - name: "Your Name"
+    hi-username: "username"
+    orcid: "0000-0000-0000-0000"
+    github: "yourusername"
     office: "VR-II"
 event-meta: "Event Name"
 event-date: today
@@ -18,7 +18,7 @@ favicon: img/hi/favicon.svg
 format:
   haskoli-islands-revealjs:
     logo: img/hi/hi_named_logo-en.svg
-    footer: "Event Name · Helga Ingimundardóttir · helgaingim@hi.is"
+    footer: "Event Name · Your Name · username@hi.is"
 ---
 
 {{< hi-title >}}

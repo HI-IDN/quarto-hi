@@ -2,18 +2,18 @@
 
 A [Quarto](https://quarto.org/) RevealJS presentation template following the [Háskóli Íslands (University of Iceland)](https://honnun.hi.is) visual identity guidelines.
 
-This is Helga Ingimundardóttir's personal starter: `template.qmd` is pre-filled with her details and ends with the VR-II contact slide. The look comes from the shared [HÍ Quarto theme](https://github.com/tungufoss/quarto-haskoli-islands-theme/releases/tag/v0.2.0) v0.2.0.
+The HI-IDN starter template: `template.qmd` is a ready deck with HÍ logos, watermark and a VR-II contact slide; fill in your details in the YAML. For a personal version, fork this repo and put your details in the fork. The look comes from the shared [HÍ Quarto theme](https://github.com/tungufoss/quarto-haskoli-islands-theme/releases/tag/v0.2.0) v0.2.0.
 
 ## Use this template
 
 ```bash
-quarto use template tungufoss/quarto-hi
+quarto use template HI-IDN/quarto-hi
 ```
 
 Or clone manually:
 
 ```bash
-git clone git@github.com:tungufoss/quarto-hi.git
+git clone git@github.com:HI-IDN/quarto-hi.git
 ```
 
 ## Demo pages

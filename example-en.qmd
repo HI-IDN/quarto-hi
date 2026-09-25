@@ -47,7 +47,7 @@ format:
 ::: {.notes}
 - Everything needed for a polished HI-branded RevealJS deck
 - Extensions are bundled — no separate install
-- Works with `quarto use template tungufoss/quarto-hi`
+- Works with `quarto use template HI-IDN/quarto-hi`
 :::
 
 ---
