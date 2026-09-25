@@ -75,7 +75,7 @@ local function presenter_html(meta, presenter)
     local safe_github = html_escape(github:gsub("^@", ""))
     table.insert(
       links,
-      '<a class="title-meta-icon" href="https://github.com/users/' .. safe_github .. '/" target="_blank" rel="noopener noreferrer" aria-label="GitHub">' ..
+      '<a class="title-meta-icon" href="https://github.com/' .. safe_github .. '" target="_blank" rel="noopener noreferrer" aria-label="GitHub">' ..
       '<i class="fa-brands fa-github" aria-hidden="true"></i></a>'
     )
   end
@@ -109,14 +109,6 @@ local function presenters_html(meta)
   return table.concat(parts, "<br>\n")
 end
 
-local function first_presenter(meta)
-  local presenters = metadata_value(meta, "presenters")
-  if type(presenters) ~= "table" then
-    return nil
-  end
-  return presenters[1]
-end
-
 local function presenter_field(presenter, key)
   if presenter == nil then
     return ""
@@ -134,36 +126,27 @@ local function contact_row(icon_class, html)
     "  </div>\n"
 end
 
-local function contact_card_html(meta)
-  local presenter = first_presenter(meta)
-  if presenter == nil then
-    return ""
+-- Institution line: affiliation (default: the university) plus office,
+-- e.g. "Háskóli Íslands, VR-II".
+local function presenter_place(meta, presenter)
+  local affiliation = presenter_field(presenter, "affiliation")
+  if affiliation == "" then
+    affiliation = document_lang(meta):sub(1, 2) == "is" and "Háskóli Íslands" or "University of Iceland"
   end
+  local office = presenter_field(presenter, "office")
+  if office == "" then return affiliation end
+  return affiliation .. ", " .. office
+end
 
+local function presenter_rows(presenter)
   local name = html_escape(presenter.name)
   local username = presenter_field(presenter, "hi-username")
   local email = presenter_field(presenter, "email")
-  local office = presenter_field(presenter, "office")
-  local affiliation = presenter_field(presenter, "affiliation")
   local orcid = presenter_field(presenter, "orcid")
   local github = presenter_field(presenter, "github"):gsub("^@", "")
 
   if email == "" and username ~= "" then
     email = username .. "@hi.is"
-  end
-
-  if office == "" then
-    office = affiliation
-  elseif affiliation ~= "" then
-    office = office .. " · " .. affiliation
-  end
-
-  if office == "" then
-    if document_lang(meta):sub(1, 2) == "is" then
-      office = "Háskóli Íslands"
-    else
-      office = "University of Iceland"
-    end
   end
 
   local rows = ""
@@ -172,7 +155,6 @@ local function contact_card_html(meta)
     "fa-solid fa-envelope",
     email ~= "" and '<a href="mailto:' .. html_escape(email) .. '">' .. html_escape(email) .. "</a>" or ""
   )
-  rows = rows .. contact_row("fa-solid fa-building-columns", "<span>" .. html_escape(office) .. "</span>")
   rows = rows .. contact_row(
     "fa-brands fa-orcid",
     orcid ~= "" and '<a href="https://orcid.org/' .. html_escape(orcid) .. '" target="_blank" rel="noopener noreferrer">' .. html_escape(orcid) .. "</a>" or ""
@@ -181,8 +163,43 @@ local function contact_card_html(meta)
     "fa-brands fa-github",
     github ~= "" and '<a href="https://github.com/' .. html_escape(github) .. '" target="_blank" rel="noopener noreferrer">@' .. html_escape(github) .. "</a>" or ""
   )
+  return rows
+end
 
-  return '<div class="contact-card">\n' .. rows .. "</div>"
+-- One block per presenter; the institution line is shown once when all
+-- presenters share it, otherwise under each presenter.
+local function contact_card_html(meta)
+  local presenters = metadata_value(meta, "presenters")
+  if type(presenters) ~= "table" or #presenters == 0 then
+    return ""
+  end
+
+  local places = {}
+  local shared = true
+  for i, presenter in ipairs(presenters) do
+    places[i] = presenter_place(meta, presenter)
+    if places[i] ~= places[1] then shared = false end
+  end
+
+  local place_row = function(place)
+    return contact_row("fa-solid fa-building-columns", "<span>" .. html_escape(place) .. "</span>")
+  end
+
+  local blocks = {}
+  for i, presenter in ipairs(presenters) do
+    local rows = presenter_rows(presenter)
+    if not shared then rows = rows .. place_row(places[i]) end
+    table.insert(blocks, '<div class="contact-card-person">\n' .. rows .. "</div>\n")
+  end
+
+  local html = table.concat(blocks)
+  if shared then
+    -- Set off with a rule when several presenters share it, so it reads as common to all
+    local row = place_row(places[1])
+    if #presenters > 1 then row = '<div class="contact-card-shared">\n' .. row .. "</div>\n" end
+    html = html .. row
+  end
+  return '<div class="contact-card">\n' .. html .. "</div>"
 end
 
 local function today_formatted(lang)

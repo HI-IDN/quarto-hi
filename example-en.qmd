@@ -16,26 +16,13 @@ menti_url: "https://www.menti.com/example"
 menti_display_url: "www.menti.com"
 menti_code: "1234 5678"
 menti_qr: "img/menti-qr.png"
+watermark: img/hi/hi_logo.svg
+favicon: img/hi/favicon.svg
 format:
-  revealjs:
-    theme: styles/hi.scss
-    css:
-      - styles/watermark.css
-    filters:
-      - _extensions/hi-title/hi-title.lua
-      - _extensions/card-enum/card-enum.lua
-      - _extensions/pause/pause.lua
-      - _extensions/menti/menti.lua
+  haskoli-islands-revealjs:
     logo: img/hi/hi_named_logo-en.svg
     footer: "quarto-hi · University of Iceland"
-    include-in-header: partials/header-includes.inc
-    include-after-body: partials/body-after.inc
     slide-number: false
-    controls: true
-    transition: none
-    background-transition: none
-    width: 1280
-    height: 720
 ---
 
 {{< hi-title >}}
@@ -60,7 +47,7 @@ format:
 ::: {.notes}
 - Everything needed for a polished HI-branded RevealJS deck
 - Extensions are bundled — no separate install
-- Works with `quarto use template tungufoss/quarto-hi`
+- Works with `quarto use template HI-IDN/quarto-hi`
 :::
 
 ---
