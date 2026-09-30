@@ -1,0 +1,22 @@
+// HI palette from the public design standard (https://honnun.hi.is/).
+// Shared by the HTML and RevealJS formats so pages, books and slides match.
+$hi-blue: #10099F !default;
+$hi-dark-blue: #0A0668 !default; // darker shade of $hi-blue for hover states
+$hi-turquoise: #2DD2C0 !default;
+$hi-green: #00FFBA !default;
+$hi-yellow: #FAC55B !default;
+$hi-coral: #FC8484 !default;
+$hi-orange: #FFA05F !default;
+$hi-engineering: #EB7125 !default;
+$hi-ink: #262626 !default;
+$hi-muted: #5D6872 !default;
+$hi-border: #E8E8E8 !default;
+$hi-surface: #F5F5F5 !default;
+$hi-white: #ffffff !default;
+
+// Accent used for rules and highlights: turquoise, as on the title,
+// break and focus slides.
+$hi-accent: $hi-turquoise !default;
+
+$hi-font-family: "Jost", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$hi-heading-family: $hi-font-family !default;

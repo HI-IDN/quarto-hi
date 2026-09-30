@@ -1,0 +1,29 @@
+/*-- scss:defaults --*/
+// Values mirror theme/_tokens.scss so HTML and slides share one look:
+// blue bar (like the slide footer), turquoise accent, dark headings.
+$font-family-sans-serif: "Jost", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$headings-font-family: "Jost", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$body-color: #262626;
+$link-color: #10099F;
+$navbar-bg: #10099F;
+$navbar-fg: #ffffff;
+$navbar-hl: #2DD2C0;
+$toc-color: #10099F;
+$code-color: #10099F;
+
+/*-- scss:rules --*/
+@import "theme/tokens";
+@import "theme/rules";
+
+.quarto-title-meta {
+  color: $hi-muted;
+}
+
+.sidebar nav[role="doc-toc"] ul > li > a.active {
+  border-left-color: $hi-accent;
+  color: $hi-dark-blue !important;
+}
+
+table caption {
+  color: $hi-muted;
+}

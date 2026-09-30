@@ -16,26 +16,13 @@ menti_url: "https://www.menti.com/example"
 menti_display_url: "www.menti.com"
 menti_code: "1234 5678"
 menti_qr: "img/menti-qr.png"
+watermark: img/hi/hi_logo.svg
+favicon: img/hi/favicon.svg
 format:
-  revealjs:
-    theme: styles/hi.scss
-    css:
-      - styles/watermark.css
-    filters:
-      - _extensions/hi-title/hi-title.lua
-      - _extensions/card-enum/card-enum.lua
-      - _extensions/pause/pause.lua
-      - _extensions/menti/menti.lua
+  haskoli-islands-revealjs:
     logo: img/hi/hi_named_logo-en.svg
     footer: "quarto-hi · University of Iceland"
-    include-in-header: partials/header-includes.inc
-    include-after-body: partials/body-after.inc
     slide-number: false
-    controls: true
-    transition: none
-    background-transition: none
-    width: 1280
-    height: 720
 ---
 
 {{< hi-title >}}
@@ -60,7 +47,7 @@ format:
 ::: {.notes}
 - Everything needed for a polished HI-branded RevealJS deck
 - Extensions are bundled — no separate install
-- Works with `quarto use template tungufoss/quarto-hi`
+- Works with `quarto use template HI-IDN/quarto-hi`
 :::
 
 ---
@@ -304,7 +291,7 @@ Syntax: two braces, `< pause 300 >`, two closing braces — where `300` is the n
 
 ::: {}
 ::: {.block}
-The `pause` extension lives in `_extensions/pause/`. Add `pause.lua` to your filters list.
+The `pause` shortcode and countdown are included in the bundled `haskoli-islands-revealjs` theme.
 :::
 ::: {.lean-in}
 The next slide is a live 30-second pause example — click the arrow to see it.
@@ -314,7 +301,7 @@ The next slide is a live 30-second pause example — click the arrow to see it.
 
 ::: {.notes}
 - Great for workshops, lectures, and in-class exercises
-- The countdown runs client-side via body-after.inc JavaScript
+- The countdown is included in the bundled theme extension
 :::
 
 ---
@@ -360,8 +347,7 @@ The next two slides show a live login slide and a question slide — with placeh
 :::
 
 ::: {.notes}
-- menti.lua is in _extensions/menti/
-- Add _extensions/menti/menti.lua to filters
+- Menti support is included in the bundled theme extension
 - QR code image must be provided separately — export from Menti
 :::
 

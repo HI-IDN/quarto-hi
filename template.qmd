@@ -4,33 +4,21 @@ output-file: index.html
 lang: en
 title-theme: "Department / Course"
 subtitle-highlight: "Your Presentation Title"
+subtitle-position: below
 presenters:
   - name: "Your Name"
     hi-username: "username"
-    orcid: ""
+    orcid: "0000-0000-0000-0000"
     github: "yourusername"
-subtitle-position: below
+    office: "VR-II"
 event-meta: "Event Name"
 event-date: today
+watermark: img/hi/hi_logo.svg
+favicon: img/hi/favicon.svg
 format:
-  revealjs:
-    theme: styles/hi.scss
-    css:
-      - styles/watermark.css
-    filters:
-      - _extensions/hi-title/hi-title.lua
-      - _extensions/card-enum/card-enum.lua
+  haskoli-islands-revealjs:
     logo: img/hi/hi_named_logo-en.svg
     footer: "Event Name · Your Name · username@hi.is"
-    include-in-header: partials/header-includes.inc
-    include-after-body: partials/body-after.inc
-    slide-number: true
-    show-slide-number: speaker
-    controls: true
-    transition: none
-    background-transition: none
-    width: 1280
-    height: 720
 ---
 
 {{< hi-title >}}
@@ -78,7 +66,7 @@ format:
 
 ---
 
-## Questions?
+## Questions? {.focus-slide}
 
 ::: {.two-col}
 ::: {.col}
