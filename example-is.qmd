@@ -289,7 +289,7 @@ Setningafræði: tvær slaufur, `< pause 300 >`, tvær lokunarslaufur — þar s
 
 ::: {}
 ::: {.block}
-`pause`-viðbótin er í `_extensions/pause/`. Bættu `pause.lua` í síulistann þinn.
+Skammstöfunin `pause` og niðurteljarinn fylgja með þemaviðbótinni `haskoli-islands-revealjs`.
 :::
 ::: {.lean-in}
 Næsta glæra er lifandi 30 sekúndna pásadæmi — smelltu á örina til að sjá hana.
@@ -299,7 +299,7 @@ Næsta glæra er lifandi 30 sekúndna pásadæmi — smelltu á örina til að s
 
 ::: {.notes}
 - Frábært fyrir vinnustofur, fyrirlestra og æfingar í tíma
-- Niðurteljari keyrir á biðlaranum í gegnum body-after.inc JavaScript
+- Niðurteljarinn fylgir með þemaviðbótinni
 :::
 
 ---
@@ -345,8 +345,7 @@ Næstu tvær glærur sýna lifandi innskráningarglæru og spurningaglæru — m
 :::
 
 ::: {.notes}
-- menti.lua er í _extensions/menti/
-- Bættu _extensions/menti/menti.lua í síulistann
+- Menti-stuðningur fylgir með þemaviðbótinni
 - QR-kóðamynd þarf að vera gefin sérstaklega — flytja út úr Menti
 :::
 

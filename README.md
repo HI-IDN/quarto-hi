@@ -67,7 +67,7 @@ Use the metadata-driven contact card shortcode on a slide:
 {{< contact-card >}}
 ```
 
-It uses the first entry in `presenters`:
+It creates a contact block for each entry in `presenters`, so you can include one or more presenters:
 
 ```yaml
 presenters:
