@@ -13,6 +13,7 @@
 
     const ctx = new AudioContext();
     const now = ctx.currentTime;
+    let remainingOscillators = 3;
     [880, 1175, 1568].forEach((frequency, index) => {
       const oscillator = ctx.createOscillator();
       const gain = ctx.createGain();
@@ -24,6 +25,12 @@
       oscillator.connect(gain).connect(ctx.destination);
       oscillator.start(now + index * 0.18);
       oscillator.stop(now + index * 0.18 + 0.16);
+      oscillator.addEventListener("ended", () => {
+        remainingOscillators -= 1;
+        if (remainingOscillators === 0) {
+          ctx.close().catch(() => {});
+        }
+      }, { once: true });
     });
   }
 
