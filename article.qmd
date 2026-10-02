@@ -4,9 +4,9 @@ categories:
   - Fræðimennska náms og kennslu
   - Námskeiðshönnun
 author:
-  - name: Nafnið þitt
-    orcid: 0000-0000-0000-0000
-    affiliation: Deild, Háskóli Íslands
+  - name: Helga Ingimundardóttir
+    orcid: 0000-0002-2780-3546
+    affiliation: Iðnaðarverkfræði-, vélaverkfræði- og tölvunarfræðideild, Háskóli Íslands
 date: "2025"
 date-format: "YYYY"
 lang: is
