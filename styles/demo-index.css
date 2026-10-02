@@ -3,6 +3,7 @@
   --hi-teal: #2dd2c0;
   --hi-green: #00ffba;
   --hi-yellow: #fac55b;
+  --hi-pink: #d61f69;
   --hi-paper: #f5f5f5;
   --hi-panel: #eeeeee;
   --hi-ink: #262626;
@@ -114,6 +115,11 @@ body {
 .demo-index__links a.demo-index__book {
   background: var(--hi-yellow);
   color: var(--hi-blue);
+}
+
+.demo-index__links a.demo-index__package {
+  background: var(--hi-pink);
+  color: var(--hi-white);
 }
 
 /* One button with a language choice: label + EN | IS */

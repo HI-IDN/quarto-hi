@@ -1,6 +1,10 @@
 project:
   type: book
   output-dir: ../_site/book
+  resources:
+    # Referenced from CSS (mask-image), which Quarto does not scan
+    - styles/hi-watermark.css
+    - img/hi/hi_logo.svg
 
 lang: is
 language:
@@ -11,22 +15,61 @@ link-citations: true
 
 book:
   title: "Titill bókarinnar"
-  subtitle: "Undirtitill"
   author:
     - name: Nafnið þitt
       orcid: 0000-0000-0000-0000
       affiliation: Deild, Háskóli Íslands
   date: "2025"
   date-format: "YYYY"
+  language: is
   favicon: img/hi/favicon.svg
+  search: true
+  page-footer:
+    left: "© 2025 Háskóli Íslands · Nafnið þitt"
+    right:
+      - text: "quarto-hi"
+        href: https://github.com/HI-IDN/quarto-hi
+  navbar:
+    logo: img/hi/hi_named_logo-is.svg
+    logo-alt: "Háskóli Íslands"
+    background: primary
+    left:
+      - href: https://example.org
+        text: "Námskeiðssíða"
+    tools:
+      - icon: github
+        href: https://github.com/HI-IDN/quarto-hi
+        aria-label: GitHub
+  sidebar:
+    style: docked
+    background: light
+    collapse-level: 1
   chapters:
     - index.qmd
-    - kafli-1.qmd
-    - kafli-2.qmd
+    - part: "Fyrsti hluti"
+      chapters:
+        - kafli-1.qmd
+        - kafli-2.qmd
     - heimildir.qmd
 
 format:
-  haskoli-islands-html:
+  html:
+    theme:
+      - cosmo
+      - styles/hi-site.scss
+    css:
+      - styles/hi-watermark.css
+      - styles/article.css
+    include-in-header:
+      - text: |
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    toc: true
+    toc-depth: 3
+    toc-title: "Á þessari síðu"
     lang: is
-    toc-title: Efnisyfirlit
-    css: styles/article.css
+    smooth-scroll: true
+    code-copy: true
+    code-overflow: wrap

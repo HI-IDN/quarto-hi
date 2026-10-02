@@ -6,4 +6,4 @@ project:
     - slides/en/index.qmd
     - slides/is/index.qmd
     - article.qmd
-  post-render: scripts/render-book.ts
+  post-render: scripts/render-examples.ts

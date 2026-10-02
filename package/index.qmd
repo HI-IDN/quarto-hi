@@ -1,0 +1,23 @@
+---
+title: "mypackage"
+---
+
+One or two sentences on what the package does and who it is for.
+
+```bash
+pip install git+https://github.com/HI-IDN/mypackage.git
+mypackage --help
+```
+
+## Why
+
+Explain the problem the package solves, and what makes it different from doing it by hand.
+
+## What it deliberately does not do
+
+- List the things that are out of scope.
+- Say what users should not expect from it.
+
+::: {.callout-note}
+This is the package documentation example from [quarto-hi](https://github.com/HI-IDN/quarto-hi). Replace the content and the names in `_quarto.yml`.
+:::

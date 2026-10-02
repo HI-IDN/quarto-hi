@@ -18,14 +18,15 @@ git clone git@github.com:HI-IDN/quarto-hi.git
 
 ## Demo pages
 
-The GitHub Pages demo renders two showcase decks, the article template and a book example:
+The GitHub Pages demo renders two showcase decks, the article template, a book example and a package documentation example:
 
 - `slides/en/index.qmd` -> `slides/en/`
 - `slides/is/index.qmd` -> `slides/is/`
 - `article.qmd` -> `article.html` (HTML article template)
-- `book/` -> `book/index.html` (Quarto book example)
+- `book/` -> `book/` (Quarto book example)
+- `package/` -> `package/` (package documentation example)
 
-The starter template copy excludes the showcase decks and the book example, and starts from `template.qmd` (slides) and `article.qmd` (article).
+The starter template copy excludes the showcase decks and the book and package examples, and starts from `template.qmd` (slides) and `article.qmd` (article).
 
 ## What's included
 
@@ -38,8 +39,10 @@ The starter template copy excludes the showcase decks and the book example, and 
 | `article.qmd` | Starter HTML article (Icelandic), see [Article template](#article-template) |
 | `article.bib`, `apa.csl` | Example bibliography and APA style using "og" between authors |
 | `styles/article.css`, `styles/article-meta.html` | Article look: theme pills, ORCID icon, publication note, photo credit |
-| `book/` | Quarto book example in the same look (demo only) |
-| `scripts/render-book.ts` | Post-render step that renders `book/` into `_site/book` |
+| `book/` | Quarto book example in the HÍ course-book look (demo only) |
+| `package/` | Package documentation website example (demo only) |
+| `styles/hi-site.scss`, `styles/hi-watermark.css` | Shared HÍ look for books and websites |
+| `scripts/render-examples.ts` | Post-render step that renders `book/` and `package/` into `_site/` |
 | `slides/en/index.qmd` | English showcase deck for the GitHub Pages demo |
 | `slides/is/index.qmd` | Icelandic showcase deck (sýnishorn) |
 
@@ -80,9 +83,17 @@ Example in use: [Viðskiptagreind sem brú milli náms og starfs](https://tunguf
 
 ## Book example
 
-`book/` is a Quarto book (`project: type: book`) in the `haskoli-islands-html` format, with chapters, a figure, a table and references. A book is its own Quarto project, so it is rendered by `scripts/render-book.ts` after the main site (`post-render` in `_quarto.yml`). The script copies `_extensions/`, `img/hi/`, `styles/`, `article.bib` and `apa.csl` into `book/` (gitignored), so the repo keeps one copy of the theme.
+`book/` is a Quarto book (`project: type: book`) in the look of the HÍ course books (e.g. [IDN302G](https://hi-idn.github.io/IDN302G)): blue navbar with the white HÍ logo and centred title, docked sidebar with teal part headings, a blue footer linking back to quarto-hi, HÍ-coloured tables, callouts and code, and a faint HÍ watermark on wide screens.
 
-To start your own book, copy `book/` into a new repo together with `_extensions/`, `img/hi/`, `styles/article.css`, `article.bib` and `apa.csl` (all inside the book folder), then run `quarto render`.
+## Package documentation example
+
+`package/` is a Quarto website for a software package, in the same look as the [skemman-harvester docs](https://hi-idn.github.io/skemman-harvester/): navbar sections Home / Get started / Guide / Reference, a floating sidebar, and install, quickstart, usage and reference pages. The footer licence is read from the repository's `LICENSE` file (the same file GitHub shows on the repo page) by `package/detect-license.ts`, which writes `{{< var license >}}` into `_variables.yml` before each render.
+
+## How the book and package examples are built
+
+Both use the shared `styles/hi-site.scss` and `styles/hi-watermark.css`. Each is its own Quarto project, so `scripts/render-examples.ts` renders them after the main site (`post-render` in `_quarto.yml`) into `_site/book/` and `_site/package/`. The script copies `img/hi/`, `styles/`, `article.bib` and `apa.csl` into each example (gitignored), so the repo keeps one copy of each.
+
+To start your own book or package site, copy `book/` or `package/` into a new repo, put `img/hi/`, `styles/hi-site.scss` and `styles/hi-watermark.css` inside it (and `article.bib`, `apa.csl` for the book), set `output-dir` in its `_quarto.yml`, and run `quarto render`.
 
 ## Card syntax
 

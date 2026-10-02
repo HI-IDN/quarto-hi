@@ -1,0 +1,14 @@
+---
+title: "Quickstart"
+---
+
+A minimal end-to-end run, from install to a first result.
+
+```bash
+mypackage init
+mypackage run --input data/example.csv
+```
+
+::: {.callout-tip}
+Keep this page short. Link to the guide for details.
+:::

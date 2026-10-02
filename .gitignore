@@ -34,10 +34,15 @@ tmp/
 !template.qmd
 !styles/article-meta.html
 
-# Copied into the book example at render time (scripts/render-book.ts)
-/book/_extensions/
+# Copied into the nested examples at render time (scripts/render-examples.ts)
 /book/img/
 /book/styles/
 /book/article.bib
 /book/apa.csl
 /book/.quarto/
+/package/img/
+/package/styles/
+/package/article.bib
+/package/apa.csl
+/package/.quarto/
+/package/_variables.yml

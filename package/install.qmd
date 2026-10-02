@@ -1,0 +1,18 @@
+---
+title: "Install"
+---
+
+Python 3.10 or newer.
+
+```bash
+pip install git+https://github.com/HI-IDN/mypackage.git
+```
+
+## From source
+
+```bash
+git clone git@github.com:HI-IDN/mypackage.git
+cd mypackage
+pip install -e ".[dev]"
+pytest
+```

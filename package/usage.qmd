@@ -1,0 +1,24 @@
+---
+title: "Usage"
+---
+
+## Commands
+
+| Command | What it does |
+|---|---|
+| `mypackage init` | Create a configuration file |
+| `mypackage run` | Run the main task |
+| `mypackage status` | Show what has been done so far |
+
+## From Python
+
+```{.python filename="example.py"}
+import mypackage
+
+result = mypackage.run("data/example.csv")
+print(result.summary())
+```
+
+::: {.callout-warning}
+Note anything that can surprise users, such as rate limits or long run times.
+:::

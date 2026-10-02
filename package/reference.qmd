@@ -1,0 +1,23 @@
+---
+title: "Reference"
+---
+
+## `mypackage.run(path, *, verbose=False)`
+
+Run the main task on the file at `path`.
+
+| Parameter | Type | Description |
+|---|---|---|
+| `path` | `str` | Input file |
+| `verbose` | `bool` | Print progress |
+
+Returns a `Result` object.
+
+## Configuration
+
+Settings are read from `mypackage.toml` in the working directory.
+
+```{.toml filename="mypackage.toml"}
+[run]
+delay = 30
+```
