@@ -1,0 +1,50 @@
+/* HTML article look: used by article.qmd (format haskoli-islands-html) */
+
+/* Photo credit under the author photo */
+.author-photo figcaption {
+  text-align: right;
+}
+
+/* Publication note in HÍ colours (surface grey, turquoise accent) */
+.pub-note {
+  background: #F5F5F5;
+  border-left: 4px solid #2DD2C0;
+  padding: .75rem 1rem;
+  margin: 1rem 0 1.5rem;
+}
+.pub-note p {
+  margin: 0;
+}
+
+/* ORCID as a Font Awesome icon, in ORCID's own green */
+.quarto-title-author-orcid img {
+  display: none;
+}
+.quarto-title-author-orcid::before {
+  font-family: "Font Awesome 6 Brands";
+  font-weight: 400;
+  content: "\f8d2";
+  color: #A6CE39;
+}
+
+/* Journal section labels as pills in the title metadata ("Þema") */
+.quarto-title-meta .quarto-categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .3rem;
+  margin: .25rem 0 0;
+}
+.quarto-title-meta .quarto-category {
+  background: #2DD2C0;
+  color: #10099F;
+  border: none;
+  border-radius: 999px;
+  padding: .1rem .55rem;
+  margin: 0;
+  font-size: .65rem;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  opacity: 1;
+}

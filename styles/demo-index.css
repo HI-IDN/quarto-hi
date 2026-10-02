@@ -3,6 +3,7 @@
   --hi-teal: #2dd2c0;
   --hi-green: #00ffba;
   --hi-yellow: #fac55b;
+  --hi-pink: #d61f69;
   --hi-paper: #f5f5f5;
   --hi-panel: #eeeeee;
   --hi-ink: #262626;
@@ -106,9 +107,49 @@ body {
   outline-offset: 3px;
 }
 
-.demo-index__links a:nth-child(2) {
+.demo-index__links a.demo-index__article {
   background: var(--hi-teal);
   color: var(--hi-blue);
+}
+
+.demo-index__links a.demo-index__book {
+  background: var(--hi-yellow);
+  color: var(--hi-blue);
+}
+
+.demo-index__links a.demo-index__package {
+  background: var(--hi-pink);
+  color: var(--hi-white);
+}
+
+/* One button with a language choice: label + EN | IS */
+.demo-index__split {
+  display: inline-flex;
+  align-items: stretch;
+  min-height: 54px;
+}
+
+.demo-index__split-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 20px;
+  background: var(--hi-blue);
+  color: var(--hi-white);
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.demo-index__links .demo-index__split a {
+  padding: 0 18px;
+  background: var(--hi-blue);
+  border-left: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.demo-index__links .demo-index__split a:hover,
+.demo-index__links .demo-index__split a:focus {
+  background: var(--hi-teal);
+  color: var(--hi-blue);
+  outline-offset: -3px;
 }
 
 @media (max-width: 760px) {

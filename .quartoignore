@@ -2,11 +2,13 @@
 _quarto.yml
 _site/
 index.qmd
-example-en.qmd
-example-is.qmd
+slides/
 README.md
 LICENSE
 search.json
 styles/demo-index.css
 img/menti-qr.png
 img/pop-pallas.jpg
+book/
+scripts/
+package/

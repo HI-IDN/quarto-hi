@@ -1,6 +1,7 @@
 ---
 pagetitle: "quarto-hi sýnishorn"
-output-file: example-is.html
+aliases:
+  - ../../example-is.html
 lang: is
 title-theme: "QUARTO-HI"
 subtitle-highlight: "Sýnishorn"
@@ -15,12 +16,12 @@ event-date: today
 menti_url: "https://www.menti.com/example"
 menti_display_url: "www.menti.com"
 menti_code: "1234 5678"
-menti_qr: "img/menti-qr.png"
-watermark: img/hi/hi_logo.svg
-favicon: img/hi/favicon.svg
+menti_qr: "../../img/menti-qr.png"
+watermark: ../../img/hi/hi_logo.svg
+favicon: ../../img/hi/favicon.svg
 format:
   haskoli-islands-revealjs:
-    logo: img/hi/hi_named_logo-is.svg
+    logo: ../../img/hi/hi_named_logo-is.svg
     footer: "quarto-hi · Háskóli Íslands"
     slide-number: false
 ---
@@ -234,7 +235,7 @@ Texti og íhlutir fara í `.slide-content`. Myndin fyllir hægri svæðið kant-
 :::
 
 <figure>
-<img class="slide-img" src="img/pop-pallas.jpg" alt="">
+<img class="slide-img" src="../../img/pop-pallas.jpg" alt="">
 </figure>
 
 ::: {.notes}
@@ -259,7 +260,7 @@ Sleppa `data-ai` → **PROMPT ·**
 :::
 
 <figure>
-<img class="slide-img" src="img/pop-pallas.jpg" alt="Pop Art Pallas Athena">
+<img class="slide-img" src="../../img/pop-pallas.jpg" alt="Pop Art Pallas Athena">
 <figcaption class="caption-prompt" data-ai="Gemini">Pop Art (Warhol): Djarf Warhol-stíll fyrir merki Háskóla Íslands — Pallas Aþenu — hvert svæði lifjótt litprentstef. Litatafla: #10099F #2DD2C0 #FAC55B #FC8484 #FFA05F á hvítu. Þykkar útlínur, flöt rástpunktar, enginn texti, lóðrætt snið.</figcaption>
 </figure>
 
@@ -365,7 +366,7 @@ Næstu tvær glærur sýna lifandi innskráningarglæru og spurningaglæru — m
 
 ::: {.two-col}
 ::: {}
-![](img/hi-vr-ii.jpg){.contact-photo}
+![](../../img/hi-vr-ii.jpg){.contact-photo}
 :::
 
 ::: {}

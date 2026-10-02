@@ -18,10 +18,16 @@ format:
   <section class="demo-index__hero">
     <img src="img/hi/hi_logo.svg" alt="" class="demo-index__mark">
     <h1>quarto-hi</h1>
-    <p>Choose a Háskóli Íslands RevealJS showcase deck.</p>
-    <nav class="demo-index__links" aria-label="Choose language">
-      <a href="example-en.html">English deck</a>
-      <a href="example-is.html" lang="is">Íslenskt sýnishorn</a>
+    <p>Háskóli Íslands Quarto templates: slides, article, book and package docs.</p>
+    <nav class="demo-index__links" aria-label="Choose a template">
+      <div class="demo-index__split" role="group" aria-label="Slides">
+        <span class="demo-index__split-label">Slides · Glærur</span>
+        <a href="slides/en/" lang="en" title="English deck">EN</a>
+        <a href="slides/is/" lang="is" title="Íslenskt sýnishorn">IS</a>
+      </div>
+      <a href="article.html" lang="is" class="demo-index__article">Grein · Article</a>
+      <a href="book/" lang="is" class="demo-index__book">Bók · Book</a>
+      <a href="package/" lang="en" class="demo-index__package">Pakki · Package</a>
     </nav>
   </section>
 </main>

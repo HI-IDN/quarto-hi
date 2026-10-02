@@ -1,0 +1,11 @@
+# Fyrsti kafli
+
+Kaflar fá númer sjálfkrafa og millifyrirsagnir birtast í efnisyfirlitinu.
+
+## Undirkafli
+
+Heimildir eru sóttar í sameiginlegu `article.bib` skrána, til dæmis @biggs_constructive.
+
+![Dæmi um mynd með myndatexta.](img/hi/hi_logo.svg){#fig-merki width="25%"}
+
+Vísað er í myndir með auðkenni, sjá mynd -@fig-merki.

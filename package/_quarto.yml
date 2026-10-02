@@ -1,0 +1,74 @@
+project:
+  type: website
+  output-dir: ../_site/package
+  # Reads the licence from the repo's LICENSE file into _variables.yml
+  pre-render: detect-license.ts
+  resources:
+    # Referenced from CSS (mask-image), which Quarto does not scan
+    - styles/hi-watermark.css
+    - img/hi/hi_logo.svg
+
+lang: en
+
+website:
+  title: "mypackage"
+  description: "One-line description of what the package does."
+  repo-url: https://github.com/HI-IDN/mypackage
+  repo-actions: [edit, issue]
+  favicon: img/hi/favicon.svg
+  search:
+    location: navbar
+    type: overlay
+  navbar:
+    logo: img/hi/hi_named_logo-en.svg
+    logo-alt: "University of Iceland"
+    background: primary
+    left:
+      - text: Home
+        href: index.qmd
+      - text: Get started
+        href: install.qmd
+      - text: Guide
+        href: usage.qmd
+      - text: Reference
+        href: reference.qmd
+    right:
+      - icon: github
+        href: https://github.com/HI-IDN/mypackage
+        aria-label: Source on GitHub
+  sidebar:
+    style: floating
+    collapse-level: 1
+    contents:
+      - index.qmd
+      - section: "Getting started"
+        contents:
+          - install.qmd
+          - quickstart.qmd
+      - section: "Guide"
+        contents:
+          - usage.qmd
+      - section: "Reference"
+        contents:
+          - reference.qmd
+  page-footer:
+    left: '© 2025 Háskóli Íslands · [{{< var license >}} licence](https://github.com/HI-IDN/mypackage/blob/main/LICENSE)'
+    right:
+      - text: "quarto-hi"
+        href: https://github.com/HI-IDN/quarto-hi
+
+format:
+  html:
+    theme:
+      - cosmo
+      - styles/hi-site.scss
+    css: styles/hi-watermark.css
+    include-in-header:
+      - text: |
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    toc: true
+    code-copy: true
+    code-overflow: wrap

@@ -1,0 +1,7 @@
+# Formáli {.unnumbered}
+
+Þetta er dæmi um Quarto-bók í HÍ-útliti. Hver kafli er sérstök `.qmd` skrá og röð þeirra er skilgreind undir `book: chapters:` í `book/_quarto.yml`.
+
+::: {.pub-note}
+Sama útlit og í námskeiðsbókum HÍ: blár haus með HÍ-merki, hliðarstika með hlutum og köflum, blár fótur og HÍ-litir.
+:::

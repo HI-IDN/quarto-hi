@@ -1,0 +1,13 @@
+<script>
+// Move the category pills into the title metadata grid, next to "Birt", under the heading "Þema"
+document.addEventListener("DOMContentLoaded", function () {
+  var cats = document.querySelector(".quarto-title .quarto-categories");
+  var meta = document.querySelector(".quarto-title-meta");
+  if (!cats || !meta) return;
+  var block = document.createElement("div");
+  block.innerHTML = '<div class="quarto-title-meta-heading">Þema</div>' +
+                    '<div class="quarto-title-meta-contents"></div>';
+  block.lastChild.appendChild(cats);
+  meta.appendChild(block);
+});
+</script>
