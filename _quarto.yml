@@ -3,7 +3,7 @@ project:
   output-dir: _site
   render:
     - index.qmd
-    - example-en.qmd
-    - example-is.qmd
+    - slides/en/index.qmd
+    - slides/is/index.qmd
     - article.qmd
   post-render: scripts/render-book.ts

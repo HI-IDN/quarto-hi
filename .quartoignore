@@ -2,8 +2,7 @@
 _quarto.yml
 _site/
 index.qmd
-example-en.qmd
-example-is.qmd
+slides/
 README.md
 LICENSE
 search.json

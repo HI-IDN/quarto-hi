@@ -20,8 +20,8 @@ git clone git@github.com:HI-IDN/quarto-hi.git
 
 The GitHub Pages demo renders two showcase decks, the article template and a book example:
 
-- `example-en.qmd` -> `index.html`
-- `example-is.qmd` -> `example-is.html`
+- `slides/en/index.qmd` -> `slides/en/`
+- `slides/is/index.qmd` -> `slides/is/`
 - `article.qmd` -> `article.html` (HTML article template)
 - `book/` -> `book/index.html` (Quarto book example)
 
@@ -40,8 +40,8 @@ The starter template copy excludes the showcase decks and the book example, and 
 | `styles/article.css`, `styles/article-meta.html` | Article look: theme pills, ORCID icon, publication note, photo credit |
 | `book/` | Quarto book example in the same look (demo only) |
 | `scripts/render-book.ts` | Post-render step that renders `book/` into `_site/book` |
-| `example-en.qmd` | English showcase rendered for the GitHub Pages demo |
-| `example-is.qmd` | Icelandic showcase source for users who want an Icelandic deck |
+| `slides/en/index.qmd` | English showcase deck for the GitHub Pages demo |
+| `slides/is/index.qmd` | Icelandic showcase deck (sýnishorn) |
 
 ## HI SVG assets
 

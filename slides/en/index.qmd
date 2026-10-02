@@ -1,6 +1,7 @@
 ---
 pagetitle: "quarto-hi template showcase"
-output-file: example-en.html
+aliases:
+  - ../../example-en.html
 lang: en
 title-theme: "QUARTO-HI"
 subtitle-highlight: "Template Showcase"
@@ -15,12 +16,12 @@ event-date: today
 menti_url: "https://www.menti.com/example"
 menti_display_url: "www.menti.com"
 menti_code: "1234 5678"
-menti_qr: "img/menti-qr.png"
-watermark: img/hi/hi_logo.svg
-favicon: img/hi/favicon.svg
+menti_qr: "../../img/menti-qr.png"
+watermark: ../../img/hi/hi_logo.svg
+favicon: ../../img/hi/favicon.svg
 format:
   haskoli-islands-revealjs:
-    logo: img/hi/hi_named_logo-en.svg
+    logo: ../../img/hi/hi_named_logo-en.svg
     footer: "quarto-hi · University of Iceland"
     slide-number: false
 ---
@@ -236,7 +237,7 @@ Text and components go in `.slide-content`. The image fills the right panel edge
 :::
 
 <figure>
-<img class="slide-img" src="img/pop-pallas.jpg" alt="">
+<img class="slide-img" src="../../img/pop-pallas.jpg" alt="">
 </figure>
 
 ::: {.notes}
@@ -261,7 +262,7 @@ Omit `data-ai` → **PROMPT ·**
 :::
 
 <figure>
-<img class="slide-img" src="img/pop-pallas.jpg" alt="Pop Art Pallas Athena">
+<img class="slide-img" src="../../img/pop-pallas.jpg" alt="Pop Art Pallas Athena">
 <figcaption class="caption-prompt" data-ai="Gemini">Pop Art (Warhol): A bold Warhol-style for University of Iceland Pallas Athena logo — each panel a vivid screenprint colour. Palette: #10099F #2DD2C0 #FAC55B #FC8484 #FFA05F on white. Thick outlines, flat halftone dots, no text, portrait mode.</figcaption>
 </figure>
 
@@ -367,7 +368,7 @@ The next two slides show a live login slide and a question slide — with placeh
 
 ::: {.two-col}
 ::: {}
-![](img/hi-vr-ii.jpg){.contact-photo}
+![](../../img/hi-vr-ii.jpg){.contact-photo}
 :::
 
 ::: {}
