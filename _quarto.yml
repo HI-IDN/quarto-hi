@@ -5,3 +5,5 @@ project:
     - index.qmd
     - example-en.qmd
     - example-is.qmd
+    - article.qmd
+  post-render: scripts/render-book.ts

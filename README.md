@@ -18,12 +18,14 @@ git clone git@github.com:HI-IDN/quarto-hi.git
 
 ## Demo pages
 
-The GitHub Pages demo renders two showcase decks:
+The GitHub Pages demo renders two showcase decks, the article template and a book example:
 
 - `example-en.qmd` -> `index.html`
 - `example-is.qmd` -> `example-is.html`
+- `article.qmd` -> `article.html` (HTML article template)
+- `book/` -> `book/index.html` (Quarto book example)
 
-The starter template copy excludes these showcase files and starts from `template.qmd`.
+The starter template copy excludes the showcase decks and the book example, and starts from `template.qmd` (slides) and `article.qmd` (article).
 
 ## What's included
 
@@ -33,6 +35,11 @@ The starter template copy excludes these showcase files and starts from `templat
 | `img/` | HÍ logos, watermark, favicon and the VR-II photo used by this template |
 | `img/hi/` | HI logos and favicon (SVG) |
 | `template.qmd` | Starter slide deck |
+| `article.qmd` | Starter HTML article (Icelandic), see [Article template](#article-template) |
+| `article.bib`, `apa.csl` | Example bibliography and APA style using "og" between authors |
+| `styles/article.css`, `styles/article-meta.html` | Article look: theme pills, ORCID icon, publication note, photo credit |
+| `book/` | Quarto book example in the same look (demo only) |
+| `scripts/render-book.ts` | Post-render step that renders `book/` into `_site/book` |
 | `example-en.qmd` | English showcase rendered for the GitHub Pages demo |
 | `example-is.qmd` | Icelandic showcase source for users who want an Icelandic deck |
 
@@ -47,6 +54,35 @@ The starter template copy excludes these showcase files and starts from `templat
 
 The watermark/background mark is stored once and recoloured in CSS with `mask-image`.
 Do not duplicate the SVG for colour variants; change `--watermark-color` instead.
+
+## Article template
+
+`article.qmd` is an HTML article in the `haskoli-islands-html` format, for papers and other long-form text rather than slides. Fill in the YAML and replace the body. It adds:
+
+- `categories` shown as pills under **Þema** in the title block, next to **Birt**
+- the author's `orcid` as a Font Awesome icon in ORCID green
+- a `.pub-note` block in HÍ colours for "Greinin birtist í …"
+- an `.author-photo` block with a right-aligned photo credit
+- `citation` metadata, so Quarto adds a "Vinsamlega vitnið í þetta verk sem:" box with BibTeX
+- `other-links` for a link to the published PDF under **Önnur snið**
+
+```yaml
+categories:
+  - Fræðimennska náms og kennslu
+  - Námskeiðshönnun
+author:
+  - name: "Nafnið þitt"
+    orcid: "0000-0000-0000-0000"
+    affiliation: "Deild, Háskóli Íslands"
+```
+
+Example in use: [Viðskiptagreind sem brú milli náms og starfs](https://tungufoss.github.io/sotl-vidskiptagreind/).
+
+## Book example
+
+`book/` is a Quarto book (`project: type: book`) in the `haskoli-islands-html` format, with chapters, a figure, a table and references. A book is its own Quarto project, so it is rendered by `scripts/render-book.ts` after the main site (`post-render` in `_quarto.yml`). The script copies `_extensions/`, `img/hi/`, `styles/`, `article.bib` and `apa.csl` into `book/` (gitignored), so the repo keeps one copy of the theme.
+
+To start your own book, copy `book/` into a new repo together with `_extensions/`, `img/hi/`, `styles/article.css`, `article.bib` and `apa.csl` (all inside the book folder), then run `quarto render`.
 
 ## Card syntax
 

@@ -1,0 +1,32 @@
+project:
+  type: book
+  output-dir: ../_site/book
+
+lang: is
+language:
+  appendix-attribution-cite-as: "Vinsamlega vitnið í þetta verk sem:"
+bibliography: article.bib
+csl: apa.csl
+link-citations: true
+
+book:
+  title: "Titill bókarinnar"
+  subtitle: "Undirtitill"
+  author:
+    - name: Nafnið þitt
+      orcid: 0000-0000-0000-0000
+      affiliation: Deild, Háskóli Íslands
+  date: "2025"
+  date-format: "YYYY"
+  favicon: img/hi/favicon.svg
+  chapters:
+    - index.qmd
+    - kafli-1.qmd
+    - kafli-2.qmd
+    - heimildir.qmd
+
+format:
+  haskoli-islands-html:
+    lang: is
+    toc-title: Efnisyfirlit
+    css: styles/article.css

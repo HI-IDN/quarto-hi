@@ -1,0 +1,7 @@
+# Formáli {.unnumbered}
+
+Þetta er dæmi um bók í `haskoli-islands-html` sniðinu. Hver kafli er sérstök `.qmd` skrá og röð þeirra er skilgreind undir `book: chapters:` í `book/_quarto.yml`.
+
+::: {.pub-note}
+Sama útlit og í greinarsniðmátinu: Jost-letur, HÍ-litir og efnisyfirlit til hliðar.
+:::

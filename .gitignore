@@ -32,3 +32,12 @@ tmp/
 # build output
 *.html
 !template.qmd
+!styles/article-meta.html
+
+# Copied into the book example at render time (scripts/render-book.ts)
+/book/_extensions/
+/book/img/
+/book/styles/
+/book/article.bib
+/book/apa.csl
+/book/.quarto/

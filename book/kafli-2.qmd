@@ -1,0 +1,12 @@
+# Annar kafli
+
+Hér kemur efni annars kafla.
+
+| Dálkur A | Dálkur B |
+|----------|----------|
+| 1        | Dæmi     |
+| 2        | Gögn     |
+
+: Dæmi um töflu. {#tbl-daemi}
+
+Sjá töflu -@tbl-daemi.

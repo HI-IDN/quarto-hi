@@ -1,0 +1,72 @@
+---
+title: "Titill greinarinnar"
+categories:
+  - Fræðimennska náms og kennslu
+  - Námskeiðshönnun
+author:
+  - name: Nafnið þitt
+    orcid: 0000-0000-0000-0000
+    affiliation: Deild, Háskóli Íslands
+date: "2025"
+date-format: "YYYY"
+lang: is
+language:
+  other-links-title: Önnur snið
+  appendix-attribution-cite-as: "Vinsamlega vitnið í þetta verk sem:"
+bibliography: article.bib
+csl: apa.csl
+link-citations: true
+citation:
+  type: article-journal
+  container-title: Heiti tímarits
+  volume: 1
+  issue: 1
+  page: 1-4
+  issued: "2025"
+  url: https://example.org/grein.pdf
+format:
+  haskoli-islands-html:
+    lang: is
+    toc-title: Efnisyfirlit
+    appendix-cite-as: display
+    css: styles/article.css
+    include-after-body: styles/article-meta.html
+    include-in-header:
+      - text: |
+          <link rel="icon" type="image/svg+xml" href="img/hi/favicon.svg">
+    other-links:
+      - text: PDF (útgefin grein)
+        icon: file-pdf
+        href: https://example.org/grein.pdf
+---
+
+::: {.pub-note}
+Greinin birtist í *Heiti tímarits*, 1(1), 2025, bls. 1–4.
+[Útgefin útgáfa (PDF)](https://example.org/grein.pdf) ·
+[Vefsíða tímaritsins](https://example.org)
+:::
+
+::: {.author-photo}
+![Mynd: © Nafn ljósmyndara](img/hi-vr-ii.jpg){fig-alt="Lýsing á mynd"}
+:::
+
+# Inngangur
+
+Hér kemur inngangur greinarinnar. Merkimiðarnir í `categories` birtast undir „Þema“ í hausnum, ORCID-auðkennið birtist sem tákn aftan við nafn höfundar og rammanum hér að ofan er ætlað að segja hvar greinin birtist.
+
+Heimildir eru sóttar í `article.bib` og birtar í APA-stíl með íslenskum tengiorðum, til dæmis @biggs_constructive eða í sviga [@biggs_constructive].
+
+# Aðferð
+
+Myndir með auðkenni fá númer sjálfkrafa og hægt er að vísa í þær, sjá mynd -@fig-daemi.
+
+![Dæmi um mynd með myndatexta.](img/hi/hi_logo.svg){#fig-daemi width="30%"}
+
+# Niðurstöður
+
+Fyllið inn niðurstöður hér.
+
+# Heimildir {.unnumbered}
+
+::: {#refs}
+:::
