@@ -1,6 +1,6 @@
 # quarto-hi
 
-> Personal fork of [HI-IDN/quarto-hi](https://github.com/HI-IDN/quarto-hi) with Helga Ingimundardóttir's details filled in. Use HI-IDN/quarto-hi for the generic template.
+> The generic HÍ Quarto template, maintained by HI-IDN. Fork this repository and add presenter details for your own project.
 
 A [Quarto](https://quarto.org/) RevealJS presentation template following the [Háskóli Íslands (University of Iceland)](https://honnun.hi.is) visual identity guidelines.
 
@@ -34,7 +34,7 @@ The starter template copy excludes the showcase decks and the book and package e
 
 | Path | Purpose |
 |---|---|
-| `_extensions/tungufoss/haskoli-islands/` | The [HÍ Quarto theme](https://github.com/tungufoss/quarto-haskoli-islands-theme/releases/tag/v0.2.0) v0.2.0: styles, title slide, contact card, cards, pause and Menti. Update with `quarto update extension tungufoss/quarto-haskoli-islands-theme` |
+| `_extensions/hi-idn/haskoli-islands/` | The [HÍ Quarto theme](https://github.com/tungufoss/quarto-haskoli-islands-theme/releases/tag/v0.2.0) v0.2.0: styles, title slide, contact card, cards, pause and Menti. Update with `quarto update extension tungufoss/quarto-haskoli-islands-theme` |
 | `img/` | HÍ logos, watermark, favicon and the VR-II photo used by this template |
 | `img/hi/` | HI logos and favicon (SVG) |
 | `template.qmd` | Starter slide deck |
@@ -81,7 +81,7 @@ author:
     affiliation: "Deild, Háskóli Íslands"
 ```
 
-Example in use: [Viðskiptagreind sem brú milli náms og starfs](https://tungufoss.github.io/sotl-vidskiptagreind/).
+See the [live template showcase](https://hi-idn.github.io/quarto-hi/) for examples of the slide and document formats.
 
 ## Book example
 

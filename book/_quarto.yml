@@ -16,16 +16,15 @@ link-citations: true
 book:
   title: "Titill bókarinnar"
   author:
-    - name: Helga Ingimundardóttir
-      orcid: 0000-0002-2780-3546
-      affiliation: Iðnaðarverkfræði-, vélaverkfræði- og tölvunarfræðideild, Háskóli Íslands
+    - name: "Nafn höfundar"
+      affiliation: "Deild, Háskóli Íslands"
   date: "2025"
   date-format: "YYYY"
   language: is
   favicon: img/hi/favicon.svg
   search: true
   page-footer:
-    left: "© 2025 Háskóli Íslands · Helga Ingimundardóttir"
+    left: "© 2026 Háskóli Íslands"
     right:
       - text: "quarto-hi"
         href: https://github.com/HI-IDN/quarto-hi
