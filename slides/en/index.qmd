@@ -158,6 +158,24 @@ Colours cycle automatically through the HI palette.
 
 ---
 
+## Opposing sides {.oppose}
+
+<span class="slide-subtitle">`::: {.oppose left="..." right="..." left-icon="..." right-icon="..."}` · separate comparison points with `|`</span>
+
+::: {.oppose left="Data science" right="AI" left-icon="microscope" right-icon="brain"}
+- Tries to understand data | Tries to learn from data
+- Finds patterns in data | Learns patterns automatically
+- Describes what happened | Predicts what might happen
+- Helps people make decisions | Can make part of the decision
+:::
+
+::: {.notes}
+- `left` and `right` set the headings; `left-icon` and `right-icon` take Font Awesome names
+- Each list item becomes one row; the pipe (`|`) splits it into left and right sides
+:::
+
+---
+
 ## Quote, callout & statement
 
 > The quality of feedback matters more than its frequency.

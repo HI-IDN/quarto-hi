@@ -1265,3 +1265,90 @@ em.emph {
 // ── Speaker view ──────────────────────────────────────────────────────────────
 html.speaker-receiver .reveal .footer,
 html.speaker-receiver .reveal .slide-logo { display: none !important; }
+
+// Opposing comparison diagram
+.oppose-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 18px;
+}
+
+.oppose-header,
+.oppose-row {
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+  gap: 0;
+}
+
+.oppose-header { margin-bottom: 6px; }
+
+.oppose-head {
+  display: flex;
+  align-items: center;
+  padding: 13px 22px;
+  font-size: 18px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  gap: 9px;
+}
+
+.oppose-head--right {
+  background: var(--blue);
+  color: var(--teal);
+  clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 50%, calc(100% - 22px) 100%, 0 100%);
+  justify-content: flex-start;
+  padding-right: 32px;
+}
+
+.oppose-head--left {
+  background: var(--teal);
+  color: var(--blue);
+  clip-path: polygon(22px 0, 100% 0, 100% 100%, 22px 100%, 0 50%);
+  justify-content: flex-end;
+  text-align: right;
+  padding-left: 32px;
+}
+
+.oppose-head--center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.oppose-row { align-items: center; }
+
+.oppose-arrow {
+  display: flex;
+  align-items: center;
+  padding: 13px 18px;
+  font-size: 15px;
+  line-height: 1.25;
+  font-weight: 600;
+}
+
+.oppose-arrow--right {
+  background: var(--bg-light);
+  color: var(--ink);
+  clip-path: polygon(0 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 0 100%);
+  border-left: 4px solid var(--blue);
+  justify-content: flex-start;
+  padding-right: 26px;
+}
+
+.oppose-arrow--left {
+  background: var(--soft-green-bg);
+  color: var(--ink);
+  clip-path: polygon(15px 0, 100% 0, 100% 100%, 15px 100%, 0 50%);
+  border-right: 4px solid var(--teal);
+  justify-content: flex-end;
+  text-align: right;
+  padding-left: 26px;
+}
+
+.oppose-dot { background: transparent; }

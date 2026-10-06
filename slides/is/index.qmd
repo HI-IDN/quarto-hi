@@ -156,6 +156,24 @@ Litir skiptast sjálfkrafa í gegnum HÍ-litapalettuna.
 
 ---
 
+## Andstæðar hliðar {.oppose}
+
+<span class="slide-subtitle">`::: {.oppose left="..." right="..." left-icon="..." right-icon="..."}` · aðgreindu samanburðarpunkta með `|`</span>
+
+::: {.oppose left="Gagnavísindi" right="Gervigreind" left-icon="microscope" right-icon="brain"}
+- Reynir að skilja gögn | Reynir að læra af gögnum
+- Finnur mynstur í gögnum | Lærir mynstur sjálfkrafa
+- Lýsir því sem gerðist | Spáir fyrir um hvað gæti gerst
+- Hjálpar fólki að taka ákvarðanir | Getur tekið hluta af ákvörðuninni
+:::
+
+::: {.notes}
+- `left` og `right` setja fyrirsagnir; `left-icon` og `right-icon` nota Font Awesome heiti
+- Hver listaliður verður ein röð; pípa (`|`) skiptir henni í vinstri og hægri hlið
+:::
+
+---
+
 ## Tilvitnun, ábending og fullyrðing
 
 > Gæði endurgjafar skipta meira máli en tíðni hennar.
